@@ -14,6 +14,11 @@ npm install          # 已安装可跳过
 npm run dev          # 打开 http://localhost:3000
 ```
 
+Windows 一键脚本（双击即可）：
+
+- `start.bat` — 启动，自动开浏览器；**关掉黑窗口即停止**
+- `stop.bat` — 按端口 3000 强制停止服务（命令行关不掉时用）
+
 其他命令：
 
 ```bash
