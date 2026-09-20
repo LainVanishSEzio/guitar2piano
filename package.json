@@ -1,0 +1,34 @@
+{
+  "name": "guitar2piano",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Guitar2Piano - 吉他谱转钢琴和弦（TAB / 和弦名 → 钢琴 voicing + 五线谱 + 播放）",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "build:static": "next build",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@tonejs/midi": "^2.0.28",
+    "lucide-react": "^0.428.0",
+    "next": "14.2.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "tone": "^15.0.4",
+    "tonal": "^6.3.1",
+    "vexflow": "^4.2.3",
+    "zustand": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.7",
+    "typescript": "^5.5.4"
+  }
+}

@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "PingFang SC", "Microsoft YaHei", "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans SC", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 20% -10%, rgba(109, 92, 246, 0.13), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, rgba(58, 214, 214, 0.08), transparent 55%),
+    #08090d;
+  color: #e6e8ef;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(109, 92, 246, 0.35);
+}
+
+/* 滚动条 */
+*::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #2b3040;
+  border-radius: 6px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #3b4257;
+}
+
+@layer components {
+  .panel {
+    @apply rounded-xl border border-white/[0.07] bg-ink-900/70 shadow-panel backdrop-blur;
+  }
+  .panel-head {
+    @apply flex items-center justify-between border-b border-white/[0.06] px-3 py-2 text-[13px] font-semibold tracking-wide text-slate-300;
+  }
+  .btn {
+    @apply inline-flex select-none items-center justify-center gap-1.5 rounded-lg border border-white/[0.08] bg-ink-800 px-2.5 py-1.5 text-[13px] font-medium text-slate-200 transition hover:border-white/20 hover:bg-ink-700 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40;
+  }
+  .btn-primary {
+    @apply border-transparent bg-brand-500 text-white hover:bg-brand-400;
+  }
+  .btn-ghost {
+    @apply bg-transparent hover:bg-white/5;
+  }
+  .chip {
+    @apply cursor-pointer select-none rounded-md border border-white/[0.08] bg-ink-800/80 px-2 py-1 text-[12px] text-slate-300 transition hover:border-brand-400/60 hover:text-white;
+  }
+  .chip-on {
+    @apply border-brand-500/70 bg-brand-500/20 text-white;
+  }
+  .field {
+    @apply w-full rounded-lg border border-white/[0.08] bg-ink-850 px-2.5 py-1.5 text-[13px] text-slate-100 outline-none transition focus:border-brand-500/70 focus:ring-2 focus:ring-brand-500/20;
+  }
+  .label {
+    @apply mb-1 block text-[11px] font-medium uppercase tracking-wider text-slate-400;
+  }
+}
+
+/* 五线谱纸张 */
+.paper {
+  background: linear-gradient(180deg, #fcfbf8 0%, #f6f4ef 100%);
+}
+
+/* 打印（导出 PDF） */
+@media print {
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-full {
+    position: static !important;
+    display: block !important;
+    overflow: visible !important;
+    max-height: none !important;
+  }
+  .paper {
+    background: #fff !important;
+  }
+  @page {
+    margin: 12mm;
+  }
+}
+
+/* 键盘 */
+.key-white {
+  background: linear-gradient(180deg, #fdfdff 0%, #eceef5 100%);
+  border: 1px solid #c9ccd8;
+  border-top: none;
+}
+.key-white:hover {
+  background: linear-gradient(180deg, #fff 0%, #e6e9f2 100%);
+}
+.key-white[data-on="1"] {
+  background: linear-gradient(180deg, #b9a8ff 0%, #7c63f5 100%);
+  border-color: #5444e0;
+}
+.key-white[data-lh="1"] {
+  background: linear-gradient(180deg, #a7e9f2 0%, #49c2d6 100%);
+}
+.key-black {
+  background: linear-gradient(180deg, #333a4a 0%, #0d1017 100%);
+  border: 1px solid #000;
+}
+.key-black:hover {
+  background: linear-gradient(180deg, #414a5e 0%, #161a24 100%);
+}
+.key-black[data-on="1"] {
+  background: linear-gradient(180deg, #8b7cff 0%, #5444e0 100%);
+}
+.key-black[data-lh="1"] {
+  background: linear-gradient(180deg, #3ad6d6 0%, #1c8f9c 100%);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
