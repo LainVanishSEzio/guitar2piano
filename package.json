@@ -2,6 +2,9 @@
   "name": "guitar2piano",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=18.17.0"
+  },
   "description": "Guitar2Piano - 吉他谱转钢琴和弦（TAB / 和弦名 → 钢琴 voicing + 五线谱 + 播放）",
   "scripts": {
     "dev": "next dev",
