@@ -19,7 +19,20 @@ npm run dev          # 打开 http://localhost:3000
 ```bash
 npm run build && npm start   # 生产构建
 npm run typecheck            # 类型检查
+npm run build:static         # 静态导出到 out/（用于 GitHub Pages 等静态托管）
 ```
+
+### 发布到 GitHub Pages
+
+仓库已内置 `.github/workflows/deploy-pages.yml`，push 到 `main` 即自动构建并发布。
+
+```bash
+git remote add origin https://github.com/<你的用户名>/guitar2piano.git
+git push -u origin main
+```
+
+然后在仓库 **Settings → Pages → Source = Deploy from a branch → gh-pages / (root)**。
+详细步骤与常见坑见 [`docs/DEPLOY-GitHub-Pages.md`](docs/DEPLOY-GitHub-Pages.md)。
 
 > Node 18+（已验证 Node 22）。无需后端、无需账号、无外部音频资源。
 
